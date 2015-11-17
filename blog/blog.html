@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="blog d2-d4 d-clear">
+          {% for post in site.posts %}
+        <h1 class="blog-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+          <h4 class="date">{{ post.date | date: "%b %-d, %Y"  }}</h4>
+        <p>{{ post.content }}</p>
+      {% endfor %}
+</div>
+   
