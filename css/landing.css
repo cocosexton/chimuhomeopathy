@@ -9,9 +9,9 @@ main {
   overflow: auto;
 }
 
-main div {
-  background: black;
-  color: white;
+main .logo {
+  background: white;
+  color: #999
   width: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
