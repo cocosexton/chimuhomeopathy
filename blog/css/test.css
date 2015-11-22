@@ -69,7 +69,6 @@ font-size: 1.313em;
 }
 
 .faq-list {
-color: #958882;
 margin-top: 1rem;
 padding: 1rem;
 font-size: 1em;
@@ -90,6 +89,11 @@ font-size: 1.125em;
 }
 
 .faq-list ul a { display: block; }
+
+.faq-list a:link, .faq-list a:visited, .faq-list a:hover, .faq-list a:active {
+color: #fff;
+text-decoration: none;
+}
 
 h2 {
 color: #b98685;
@@ -129,7 +133,7 @@ margin-top: 1rem;
 }
 
 .map {
-margin-top: 1.75rem;
+padding-top: 1.5em;
 }
 
 h1 {
@@ -176,16 +180,16 @@ letter-spacing: .96px;
 
 
 p {
-font-size: 1.313em;
-line-height: 1.5;
-color: #777777;
+font-size: 1.25em;
+line-height: 1.4;
+color: #444;
 margin-top: 2.441rem;
 }
 
 .faq > p {
-font-size: 1em;
-line-height: 1.5;
-color: #777777;
+font-size: 1.125em;
+line-height: 1.6;
+color: #444;
 margin-top: 0;
 }
 
@@ -195,10 +199,10 @@ text-decoration: none;
 }
 
 .blog > p {
-font-size: 1.313em;
-line-height: 1.5;
-color: #777777;
+font-size: 1.25em;
+line-height: 1.4;
 margin-top: 1rem;
+color: #444444;
 }
 
 .blog > p + p
@@ -217,9 +221,9 @@ margin-bottom: .25em;
 }
 
 .alt-about {
-font-size: 1.313em;
-line-height: 1.5;
-color: #777777;
+font-size: 1.25em;
+line-height: 1.4;
+color: #444;
 margin-top: 2.441rem;
 text-align: center;
 }
@@ -256,7 +260,7 @@ display: inline;
 .nav a, .nav a:visited, .nav a:active {
 margin-bottom: 0;
     text-decoration: none;
-color: #8c8c8c;
+color: #999999;
 text-transform: uppercase;
 }
 
@@ -317,7 +321,7 @@ text-align: center;
 .logotype {
 margin: .5em 0 0 0;
 letter-spacing: 1px;
-color: #b3b3b3;
+color: #999;
 font-size: 1em;
 font-weight: normal;
 }
