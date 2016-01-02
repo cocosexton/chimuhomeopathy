@@ -1,11 +1,13 @@
 ---
 layout: default
 ---
-<div class="blog d2-d4 d-clear">
+<section class="container blog">
           {% for post in site.posts %}
-        <h1 class="blog-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+          <article>
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
           <h4 class="date">{{ post.date | date: "%B %-d, %Y"  }}</h4>
-        <p>{{ post.content }}</p>
+        {{ post.content }}
+        <h4 class="tag">Tagged: {{ post.tag }}</h4>
+        </article>
       {% endfor %}
-</div>
-   
+</section>

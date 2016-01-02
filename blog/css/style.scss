@@ -8,17 +8,44 @@
 // import mixins stylesheet
 @import "mixins";
 
+// import gridset stylesheet
+@import "grids";
+
 // variables
 $bodycolor: #999999;
 $textcolor: #444444;
 $primaryaccent: #ccb5a1;
 $secondaryaccent: #b98685;
+$linkcolor: #2E597B;
+$linkhovercolor:#999999;
 
-// base styles
+// base layout
 html {
   color: $bodycolor;
   font-size: 1em;
   line-height: 1.4;
+}
+
+body {
+font-family: "ff-tisa-web-pro",serif;
+font-style: normal;
+font-weight: 400;
+}
+
+.logotype {
+font-family: "tablet-gothic",sans-serif;
+font-style: normal;
+font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, nav {
+font-family: "industry",sans-serif;
+font-style: normal;
+font-weight: 500;
+}
+
+nav {
+font-family: "industry",sans-serif;
 }
 
 .wrapper {
@@ -27,15 +54,36 @@ html {
   margin: 0 auto;
 }
 
-// typography
-h1 {
+.banner {
+  text-align: center;
+  padding: 0;
+  @include gs-span(d, all);
   margin-top: 2.441rem;
+}
+
+.container, .alt-container {
+@include gs-span(d, 2, 4);
+clear: both;
+}
+
+.alt-container {
+text-align: center;
+}
+
+header {
+@include gs-span(d, all);
+}
+
+// base typography
+
+h1 {
   font-size: 2.75em;
+  line-height: 1;
 }
 
 h2 {
   color: $secondaryaccent;
-  margin-top: 1rem;
+  margin: 1rem 0 0;
 }
 
 p {
@@ -45,83 +93,177 @@ p {
   margin-top: 2.441rem;
 }
 
-.faq-title {
+p + p, h2 + p, h1 + p {
+margin-top: 1rem;
+}
+
+hr {
+border-top: 7px solid #E9E9E9;
+  margin-top: 3.5rem;
+}
+
+a:link, a:visited {
+  color: $primaryaccent;
+}
+
+a:hover, a:active {
+  color: $linkhovercolor;  
+}
+
+
+.button {
+font-size: 1rem;
+background-color: #958882;
+color: #fff;
+padding-top: 1em;
+padding-bottom: 1em;
+border-radius: 50px;
+text-align: center;
+font-style: italic;
+@include gs-span(d, 3);
+margin-top: 1rem;
+text-decoration: none;
+}
+
+.button:link, .button:visited {
+color: #fff;
+}
+
+.button:hover, .button:active {
+  background-color: #999;
+}
+
+.button-b {
+font-size: 1rem;
+background-color: #958882;
+color: #fff;
+padding-top: 1rem;
+padding-bottom: 1rem;
+border-radius: 50px;
+text-align: center;
+font-style: italic;
+text-decoration: none;
+display: block;
+margin: 0 auto;
+width: 50%;
+}
+
+.button-b:link, .button-b:visited {
+color: #fff;
+}
+
+.button-b:hover, .button-b:active {
+  background-color: #999;
+}
+
+
+// navigation
+
+nav {
+  margin-top: 2em;
+}
+
+.nav-a {
+  text-align: left;
+  @include gs-span(d, 1, 2);
+}
+
+.nav-b {
+  text-align: right;
+  @include gs-span(d, 4, 5);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #ccc;
+}
+
+nav li {
+  display: inline;
+}
+
+nav {
+  letter-spacing: 1px;
+}
+
+nav a:link, nav a:visited {
+  margin-bottom: 0;
+  text-decoration: none;
+  color: #8897A6;
+  text-transform: uppercase;
+}
+
+nav a:hover, nav a:active {
+  color: #3E7CB1;
+}
+
+//page-specific styles
+
+.faq h2 {
   color: $primaryaccent;
   margin-top: 2rem;
   line-height: 1.5;
 }
 
-.faq-question {
-  color: $primaryaccent;
+.faq h3 {
+ color: $primaryaccent;
   margin-top: 1.5rem;
   font-size: 1.313em;
 }
 
-.faq-list {
-  margin-top: 1rem;
-  padding: 1rem;
-  font-size: 1em;
-  line-height: 1.5;
-  background-color: $bodycolor;
-}
-
-.faq-subtitle {
+.faq h4 {
   margin: 0;
   color: #b3b3b3;
   font-style: italic;
   font-size: 1.125em;
 }
 
-.faq-list {
+.faq ul {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1em;
+  line-height: 1.5;
+  background-color: $bodycolor;
   list-style: disc inside none;
   color: #fff;
 }
 
-.faq-list ul a { 
+.faq ul a { 
   display: block; 
 }
 
-.faq-list a:link, .faq-list a:visited, .faq-list a:hover, .faq-list a:active {
+.faq ul a:link, .faq ul a:visited {
   color: #fff;
   text-decoration: none;
 }
 
-.nav {
-  margin-top: 2em;
+.faq ul a:hover, .faq ul a:active {
+  text-decoration: underline;
 }
 
-.nav-a {
-  text-align: left;
-}
-
-.nav-b {
-  text-align: right;
-}
-
-.contact {
-  padding-bottom: 3rem;
-}
-
-.contact p {
-  margin-top: 1rem;
+.faq p {
+font-size: 1em;
+line-height: 1.6;
+  color: $textcolor;
+  margin-top: 0;
 }
 
 .contact h1 {
   color: $primaryaccent;
   text-align: center;
   border-bottom: 8px solid #E9E9E9;
+  margin-top: 2.441rem;
+  margin-bottom: 1.5rem;
   padding: 0 0 .5rem 0;
 }
 
-.contact p + p {
-  margin-top: 1rem;
+.blog p {
+margin-top: 1rem;
 }
 
-.map {
-  padding-top: 1.5em;
-}
-
-.blog-title {
+.blog h1 {
   margin-top: 2.441rem;
   font-size: 2.75em;
   line-height: 1.2;
@@ -138,34 +280,16 @@ p {
 
 .tag {
   margin-top: 1em;
-  color: #b3b3b3;
+  color: $bodycolor;
 }
 
-.welcome {
-  text-align: center;
-  margin-top: 2.441rem;
-  padding: 0;
-}
-
-.headline {
+.banner-title {
   text-transform: uppercase;
   color: $primaryaccent;
   border-bottom: 8px solid #E9E9E9;
   padding: 0 0 .5rem 0;
   font-size: 3.206em;
   letter-spacing: .96px;
-}
-
-.faq > p {
-  font-size: 1.125em;
-  line-height: 1.6;
-  color: $textcolor;
-  margin-top: 0;
-}
-
-.blog a:link, .blog a:visited, .blog a:hover, .blog a:active {
-  color: $primaryaccent; 
-  text-decoration: none;
 }
 
 .blog > p {
@@ -175,190 +299,113 @@ p {
   color: $textcolor;
 }
 
-.blog > p + p {
-  margin-top: 1rem;
+.about-title-a {
+  @include gs-span(d, 1, 2);
+  text-align: right;
+} 
+
+.about-title-b {
+  @include gs-span(d, 3);
 }
 
-.about {
-margin: 1rem 0 4rem 0;
+.about-title-c {
+@include gs-span(d, 4, 5);
+text-align: left;
 }
 
-.about-portrait {
+.about-title-a, .about-title-c{
+text-transform: uppercase;
+color: $primaryaccent;
+margin-top: 2.441rem;
+font-size:1.221rem;
+}
+
+img[rel="divider"] {
+padding-top: .75rem;
+}
+
+.headshot {
   -webkit-border-radius: 120px;
   -moz-border-radius: 120px;
   border-radius: 120px;
   margin-bottom: .25em;
 }
 
-.alt-about {
-  font-size: 1.25em;
-  line-height: 1.4;
-  color: $textcolor;
-  margin-top: 2.441rem;
-  text-align: center;
+.line_split {
+color: #B3B3B3;
+@include gs-span(d, 2, 4);
+float: none;
 }
 
-.main {
-  font-size: 1.313em;
-  line-height: 1.5;
-  color: #8C8C8C;
-  margin-top: 1rem;
-}
-
-.about-body {
-  font-size: 1.313em;
-  line-height: 1.5;
-  color: #8C8C8C;
-  margin-top: 2.441rem;
-}
-
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-nav li {
-  display: inline;
-}
-
-.nav {
-  letter-spacing: 1px;
-}
-
-.nav a, .nav a:visited, .nav a:active {
-  margin-bottom: 0;
-  text-decoration: none;
-  color: $bodycolor;
-  text-transform: uppercase;
-}
-
-.nav a:hover {
-  color: #405862;
-}
-
-.button {
-  font-size: 1em;
-  text-decoration: none;
-  vertical-align: middle;
-  color: #fff;
-   background: #958882;
-   -webkit-border-radius: 2px;
-   -moz-border-radius: 2px;
-   border-radius: 2px;
-  font-style: italic;
-  font-weight: 400;
-  margin: 1.5em auto;
-  display: block;
-  width: 30%;
-  text-align: center;
-  padding: 1em .5em 1em .5em;
-}
-
-.button:hover, .button a:active {
-  background: #8c8c8c;
-  color: #fff;
-  text-decoration: none;
- }
-
-.word_split {
-  margin: 0;
-  padding: 0;
-}
-
-.word_split .word1, .word_split .word2, .word_split .word3, .word_split .word4, .word_split .word5, .word_split .word6, .word_split .word7, .word_split .word8 {
+.line_split .line1 {
   color: #8C8C8C;
 }
 
-.word_split .word9, .word_split .word10, .word_split .word11, .word_split .word12, .word_split .word13, .word_split .word14, .word_split .word15, .word_split .word16, .word_split .word17 {
-  color: #9E9E9E;
+.line_split .line2 {
+    color: #9E9E9E;
 }
 
-.word_split .word18, .word_split .word19, .word_split .word20, .word_split .word21, .word_split .word22, .word_split .word23, .word_split .word24, .word_split .word25, .word_split .word26 {
+.line_split .line3 {
   color: #B3B3B3;
 }
 
-.about-hero {
-  margin-top: 2.5em;
-}
-
 .logo {
-  margin: 0 auto;
+margin: 0;
+padding: 0;
   text-align: center;
+  @include gs-span(d, 3);
 }
 
 .logotype {
-  margin: .5em 0 0 0;
+  margin: .25em 0 0 0;
   letter-spacing: 1px;
-  color: $bodycolor;
+  color: #8897A6;
   font-size: 1em;
   font-weight: normal;
 }
 
-.group {
+.img-a {
   float:left;
-  margin: 1.25em 1.75em 0 1.75em;
+  margin: 1.25em 1.75em 0 1.25em;
 }
 
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
+.img-b {
+float:right;
+margin: 1.25em 0 0 1.75em;
+padding-bottom: 1rem;
 }
 
-.groupb {
-  float:right;
-  margin: 1.75em 1.75em 0 1.75em;
-}
-
-.groupb:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.about-left {
-  text-align: center;
-  margin-top: 2.441rem;
-  padding: 0;
-	width: 100%;
-}
-
-hr {
-  border-top: 7px solid #E9E9E9;
-  margin-top: 3.5rem;
-}
-
-.textblock {
-  border-bottom: 7px solid #E9E9E9;
-  padding-bottom: 3em;
-  margin: 0;
-}
-
-.abouthed-a {
-  font-size: 3.206em;
+footer {
+  @include gs-span(d, all);
   color: $primaryaccent;
-  text-transform: uppercase;
-  margin-top: 1.75rem;
-  text-align: right;
+  font-size: .75em;
+  clear: both;
+  margin-top: 4.25em; 
+  margin-bottom: 4.25em;
 }
 
-.abouthed-b {
-  font-size: 3.206em;
-  color: $primaryaccent;
-  text-transform: uppercase;
-  margin-top: 1.75rem;
-  text-align: left;
+.footer-about {
+  @include gs-span(d, 1, 2);
 }
 
-.variant-b {
-  text-align: left;
+.footer-about > p, .footer-social > p {
+color: $bodycolor;
+margin: 0;
+padding: 0;
+font-style: italic;
 }
 
-.center {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  margin-top: 2.441rem;
+.footer-social {
+@include gs-span(d, 4, 5);
 }
+
+footer a:link, footer a:visited {
+text-decoration: underline;
+color: $bodycolor;
+}
+
+footer a:hover, footer a:active {
+color: #ccc;
+text-decoration: underline;
+}
+
