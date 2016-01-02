@@ -11,4 +11,4 @@ And while homeopathy was birthed in Germany, it draws on the knowledge of people
 
 Healing justice, like homeopathy, is about freedom. Freedom to dream, to mourn, to love, to be, to connect, to wonder, to live, to create, to move. Freedom that renders oppression redundant—that reveals capitalism, white supremacy, colonialism and patriarchy as weak in the face of our collective Vital Force. 
 
-Healing justice is centering women, queer and trans folks, people of Color, Indigenous peoples. For me, healing justice and homeopathy, in relationship, bring each other to greater potency.
+Healing justice is centering women, queer and trans folks, people of color, indigenous peoples. For me, healing justice and homeopathy, in relationship, bring each other to greater potency.
