@@ -61,12 +61,13 @@ font-family: "industry",sans-serif;
   margin-top: 2.441rem;
 }
 
-.container, .alt-container {
+.container {
 @include gs-span(d, 2, 4);
 clear: both;
 }
 
 .alt-container {
+@extend .container;
 text-align: center;
 }
 
@@ -94,11 +95,11 @@ p {
 }
 
 p + p, h2 + p, h1 + p {
-margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 hr {
-border-top: 7px solid #E9E9E9;
+  border-top: 7px solid #E9E9E9;
   margin-top: 3.5rem;
 }
 
@@ -110,23 +111,22 @@ a:hover, a:active {
   color: $linkhovercolor;  
 }
 
-
 .button {
-font-size: 1rem;
-background-color: #958882;
-color: #fff;
-padding-top: 1em;
-padding-bottom: 1em;
-border-radius: 50px;
-text-align: center;
-font-style: italic;
-@include gs-span(d, 3);
-margin-top: 1rem;
-text-decoration: none;
+  font-size: 1rem;
+  background-color: #958882;
+  color: #fff;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 50px;
+  text-align: center;
+  font-style: italic;
+  @include gs-span(d, 3);
+  margin-top: 1rem;
+  text-decoration: none;
 }
 
 .button:link, .button:visited {
-color: #fff;
+  color: #fff;
 }
 
 .button:hover, .button:active {
@@ -161,6 +161,26 @@ color: #fff;
 
 nav {
   margin-top: 2em;
+  letter-spacing: 1px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      color: #ccc;
+    }
+    li {
+      display: inline;
+    }
+    a:link, a:visited {
+      margin-bottom: 0;
+      text-decoration: none;
+      color: #8897A6;
+      text-transform: uppercase;
+    }
+    a:hover, a:active {
+    color: #3E7CB1;
+    }
+
 }
 
 .nav-a {
@@ -171,32 +191,6 @@ nav {
 .nav-b {
   text-align: right;
   @include gs-span(d, 4, 5);
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  color: #ccc;
-}
-
-nav li {
-  display: inline;
-}
-
-nav {
-  letter-spacing: 1px;
-}
-
-nav a:link, nav a:visited {
-  margin-bottom: 0;
-  text-decoration: none;
-  color: #8897A6;
-  text-transform: uppercase;
-}
-
-nav a:hover, nav a:active {
-  color: #3E7CB1;
 }
 
 //page-specific styles
@@ -228,20 +222,17 @@ nav a:hover, nav a:active {
   background-color: $bodycolor;
   list-style: disc inside none;
   color: #fff;
-}
-
-.faq ul a { 
-  display: block; 
-}
-
-.faq ul a:link, .faq ul a:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-.faq ul a:hover, .faq ul a:active {
-  text-decoration: underline;
-}
+    a { 
+      display: block; 
+    }
+    a:link, a:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover, a:active {
+      text-decoration: underline;
+    }   
+  }
 
 .faq p {
 font-size: 1em;
@@ -259,16 +250,24 @@ line-height: 1.6;
   padding: 0 0 .5rem 0;
 }
 
-.blog p {
-margin-top: 1rem;
+.blog {
+  p {
+    margin-top: 1rem;
+  }
+  h1 {
+    margin-top: 2.441rem;
+    font-size: 2.75em;
+    line-height: 1.2;
+    color: $primaryaccent;
+    text-align: center;
+  }
 }
 
-.blog h1 {
-  margin-top: 2.441rem;
-  font-size: 2.75em;
-  line-height: 1.2;
-  color: $primaryaccent;
-  text-align: center;
+.blog > p {
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-top: 1rem;
+  color: $textcolor;
 }
 
 .date {
@@ -290,13 +289,6 @@ margin-top: 1rem;
   padding: 0 0 .5rem 0;
   font-size: 3.206em;
   letter-spacing: .96px;
-}
-
-.blog > p {
-  font-size: 1.25em;
-  line-height: 1.4;
-  margin-top: 1rem;
-  color: $textcolor;
 }
 
 .about-title-a {
@@ -335,23 +327,20 @@ padding-top: .75rem;
 color: #B3B3B3;
 @include gs-span(d, 2, 4);
 float: none;
-}
-
-.line_split .line1 {
-  color: #8C8C8C;
-}
-
-.line_split .line2 {
+  .line1 {
+    color: #8C8C8C;
+  }
+  .line2 {
     color: #9E9E9E;
-}
-
-.line_split .line3 {
-  color: #B3B3B3;
+  }
+  .line3 {
+    color: #B3B3B3;
+  }
 }
 
 .logo {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
   text-align: center;
   @include gs-span(d, 3);
 }
@@ -382,6 +371,14 @@ footer {
   clear: both;
   margin-top: 4.25em; 
   margin-bottom: 4.25em;
+    a:link, a:visited {
+      text-decoration: underline;
+      color: $bodycolor;
+    }
+    a:hover, a:active {
+      color: #ccc;
+      text-decoration: underline;
+    }
 }
 
 .footer-about {
@@ -399,13 +396,4 @@ font-style: italic;
 @include gs-span(d, 4, 5);
 }
 
-footer a:link, footer a:visited {
-text-decoration: underline;
-color: $bodycolor;
-}
-
-footer a:hover, footer a:active {
-color: #ccc;
-text-decoration: underline;
-}
 
