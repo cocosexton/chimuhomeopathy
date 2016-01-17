@@ -50,7 +50,7 @@ font-family: "industry",sans-serif;
 
 .wrapper {
   padding-top: 2.441em;
-  width: 990px;
+  max-width: 990px;
   margin: 0 auto;
 }
 
@@ -117,7 +117,7 @@ a:hover, a:active {
   color: #fff;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-radius: 50px;
+  border-radius: 5px;
   text-align: center;
   font-style: italic;
   @include gs-span(d, 3);
@@ -139,7 +139,7 @@ background-color: #958882;
 color: #fff;
 padding-top: 1rem;
 padding-bottom: 1rem;
-border-radius: 50px;
+border-radius: 5px;
 text-align: center;
 font-style: italic;
 text-decoration: none;
@@ -191,6 +191,14 @@ nav {
 .nav-b {
   text-align: right;
   @include gs-span(d, 4, 5);
+}
+
+.nav-a, .nav-b {
+ @include gs-media(t, max) {  
+   @include gs-span(t, all);
+   clear: both;
+   text-align: center;
+  }
 }
 
 //page-specific styles
@@ -343,6 +351,9 @@ float: none;
   padding: 0;
   text-align: center;
   @include gs-span(d, 3);
+  @include gs-media(t, max) {  
+   @include gs-span(t, all);
+  }
 }
 
 .logotype {
