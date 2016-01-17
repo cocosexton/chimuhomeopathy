@@ -237,7 +237,7 @@ a:hover, a:active {
   color: #fff;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-radius: 50px;
+  border-radius: 5px;
   text-align: center;
   font-style: italic;
   display: block;
@@ -260,7 +260,7 @@ a:hover, a:active {
   color: #fff;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-radius: 50px;
+  border-radius: 5px;
   text-align: center;
   font-style: italic;
   text-decoration: none;
@@ -275,7 +275,22 @@ a:hover, a:active {
   background-color: #999; }
 
 nav {
-  margin-top: 2em; }
+  margin-top: 2em;
+  letter-spacing: 1px; }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #ccc; }
+  nav li {
+    display: inline; }
+  nav a:link, nav a:visited {
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #8897A6;
+    text-transform: uppercase; }
+  nav a:hover, nav a:active {
+    color: #3E7CB1; }
 
 .nav-a {
   text-align: left;
@@ -293,26 +308,15 @@ nav {
   margin-right: -100%;
   width: 38.78788%; }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  color: #ccc; }
-
-nav li {
-  display: inline; }
-
-nav {
-  letter-spacing: 1px; }
-
-nav a:link, nav a:visited {
-  margin-bottom: 0;
-  text-decoration: none;
-  color: #8897A6;
-  text-transform: uppercase; }
-
-nav a:hover, nav a:active {
-  color: #3E7CB1; }
+@media only screen and (max-width: 989px) {
+  .nav-a, .nav-b {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    clear: both;
+    text-align: center; } }
 
 .faq h2 {
   color: #ccb5a1;
@@ -338,16 +342,13 @@ nav a:hover, nav a:active {
   background-color: #999999;
   list-style: disc inside none;
   color: #fff; }
-
-.faq ul a {
-  display: block; }
-
-.faq ul a:link, .faq ul a:visited {
-  color: #fff;
-  text-decoration: none; }
-
-.faq ul a:hover, .faq ul a:active {
-  text-decoration: underline; }
+  .faq ul a {
+    display: block; }
+  .faq ul a:link, .faq ul a:visited {
+    color: #fff;
+    text-decoration: none; }
+  .faq ul a:hover, .faq ul a:active {
+    text-decoration: underline; }
 
 .faq p {
   font-size: 1em;
@@ -365,13 +366,18 @@ nav a:hover, nav a:active {
 
 .blog p {
   margin-top: 1rem; }
-
 .blog h1 {
   margin-top: 2.441rem;
   font-size: 2.75em;
   line-height: 1.2;
   color: #ccb5a1;
   text-align: center; }
+
+.blog > p {
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-top: 1rem;
+  color: #444444; }
 
 .date {
   text-align: center;
@@ -390,12 +396,6 @@ nav a:hover, nav a:active {
   padding: 0 0 .5rem 0;
   font-size: 3.206em;
   letter-spacing: .96px; }
-
-.blog > p {
-  font-size: 1.25em;
-  line-height: 1.4;
-  margin-top: 1rem;
-  color: #444444; }
 
 .about-title-a {
   display: block;
@@ -443,15 +443,12 @@ img[rel="divider"] {
   margin-right: -100%;
   width: 59.19192%;
   float: none; }
-
-.line_split .line1 {
-  color: #8C8C8C; }
-
-.line_split .line2 {
-  color: #9E9E9E; }
-
-.line_split .line3 {
-  color: #B3B3B3; }
+  .line_split .line1 {
+    color: #8C8C8C; }
+  .line_split .line2 {
+    color: #9E9E9E; }
+  .line_split .line3 {
+    color: #B3B3B3; }
 
 .logo {
   margin: 0;
@@ -462,6 +459,13 @@ img[rel="divider"] {
   margin-left: 40.80808%;
   margin-right: -100%;
   width: 18.38384%; }
+  @media only screen and (max-width: 989px) {
+    .logo {
+      clear: both;
+      display: block;
+      float: left;
+      margin-left: 0;
+      width: 100%; } }
 
 .logotype {
   margin: .25em 0 0 0;
@@ -490,6 +494,12 @@ footer {
   clear: both;
   margin-top: 4.25em;
   margin-bottom: 4.25em; }
+  footer a:link, footer a:visited {
+    text-decoration: underline;
+    color: #999999; }
+  footer a:hover, footer a:active {
+    color: #ccc;
+    text-decoration: underline; }
 
 .footer-about {
   display: block;
@@ -510,11 +520,3 @@ footer {
   margin-left: 61.21212%;
   margin-right: -100%;
   width: 38.78788%; }
-
-footer a:link, footer a:visited {
-  text-decoration: underline;
-  color: #999999; }
-
-footer a:hover, footer a:active {
-  color: #ccc;
-  text-decoration: underline; }
