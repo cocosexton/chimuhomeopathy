@@ -50,7 +50,7 @@ font-family: "industry",sans-serif;
 
 .wrapper {
   padding-top: 2.441em;
-  width: 990px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -59,16 +59,25 @@ font-family: "industry",sans-serif;
   padding: 0;
   @include gs-span(d, all);
   margin-top: 2.441rem;
+   @include gs-media(t, max) {  
+   margin-top: 1rem;
+  }
 }
 
 .container {
 @include gs-span(d, 2, 4);
 clear: both;
+ @include gs-media(t, max) {  
+   @include gs-span(t, all);
+  }
 }
 
 .alt-container {
 @extend .container;
 text-align: center;
+ @include gs-media(t, max) {  
+   @include gs-span(t, all);
+  }
 }
 
 header {
@@ -80,6 +89,9 @@ header {
 h1 {
   font-size: 2.75em;
   line-height: 1;
+   @include gs-media(t, max) {
+    font-size: 1.75em;
+  }
 }
 
 h2 {
@@ -92,6 +104,10 @@ p {
   line-height: 1.4;
   color: $textcolor;
   margin-top: 2.441rem;
+   @include gs-media(m, max) {
+    font-size: 1em;
+    margin-top: 1rem;
+  }
 }
 
 p + p, h2 + p, h1 + p {
@@ -101,6 +117,10 @@ p + p, h2 + p, h1 + p {
 hr {
   border-top: 7px solid #E9E9E9;
   margin-top: 3.5rem;
+   @include gs-media(m, max) { 
+   margin-top: 1.5rem;
+   border-top: 3px solid #E9E9E9;
+  }
 }
 
 a:link, a:visited {
@@ -112,50 +132,29 @@ a:hover, a:active {
 }
 
 .button {
-  font-size: 1rem;
-  background-color: #958882;
-  color: #fff;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: 5px;
-  text-align: center;
-  font-style: italic;
-  @include gs-span(d, 3);
-  margin-top: 1rem;
-  text-decoration: none;
-}
-
-.button:link, .button:visited {
-  color: #fff;
-}
-
-.button:hover, .button:active {
-  background-color: #999;
-}
-
-.button-b {
 font-size: 1rem;
-background-color: #958882;
-color: #fff;
-padding-top: 1rem;
-padding-bottom: 1rem;
-border-radius: 5px;
-text-align: center;
-font-style: italic;
-text-decoration: none;
+margin-top: 2em;
 display: block;
-margin: 0 auto;
-width: 50%;
+font-style: italic;
+  a, a:visited {
+    color: #ffffff;
+    background: #958882;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    border: .25em 1em;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
+  }
+  a:hover, a:active {
+  background: #999;
+  color: #fff;
+  text-decoration: none;
+  }
+  @include gs-media(m, max) { 
+  font-size: .75rem;
+  }
 }
-
-.button-b:link, .button-b:visited {
-color: #fff;
-}
-
-.button-b:hover, .button-b:active {
-  background-color: #999;
-}
-
 
 // navigation
 
@@ -163,13 +162,17 @@ nav {
   margin-top: 2em;
   letter-spacing: 1px;
     ul {
-      margin: 0;
+      text-align: center;
       padding: 0;
       list-style-type: none;
       color: #ccc;
+        @include gs-media(m, max) {  
+      @include gs-span(m, all);
+  }
     }
     li {
-      display: inline;
+      display: inline-block;
+      padding-right: .5em;
     }
     a:link, a:visited {
       margin-bottom: 0;
@@ -183,22 +186,23 @@ nav {
 
 }
 
-.nav-a {
-  text-align: left;
-  @include gs-span(d, 1, 2);
+//Couple of additional media queries to split the navigation into two lists at tablet/desktop sizes.
+@media only screen and (min-width: 768px) {
+
+nav ul li:nth-child(-n+3) {
+float: left;
 }
 
-.nav-b {
-  text-align: right;
-  @include gs-span(d, 4, 5);
+nav ul li:nth-child(n+4) {
+float: right;
 }
 
-.nav-a, .nav-b {
- @include gs-media(t, max) {  
-   @include gs-span(t, all);
-   clear: both;
-   text-align: center;
-  }
+//And let's remove the unnecessary padding from the second-to-last element, which is visually the last 
+// element. (Obvious future bug fix.)
+nav ul li:nth-last-child(2) {
+padding-right: 0;
+}
+
 }
 
 //page-specific styles
@@ -297,6 +301,12 @@ line-height: 1.6;
   padding: 0 0 .5rem 0;
   font-size: 3.206em;
   letter-spacing: .96px;
+  @include gs-media(m, max) {  
+  font-size: 2em;
+  border-bottom: 6px solid #E9E9E9;
+   padding: 0;
+   line-height: 2;
+}
 }
 
 .about-title-a {
@@ -306,6 +316,9 @@ line-height: 1.6;
 
 .about-title-b {
   @include gs-span(d, 3);
+  @include gs-media(m, max) {  
+  @include gs-span(m, all);
+}
 }
 
 .about-title-c {
@@ -313,22 +326,38 @@ line-height: 1.6;
 text-align: left;
 }
 
+.about-title-d {
+display: none;
+@include gs-media(m, max) {  
+@include gs-span(m, all);
+display: inline;
+text-transform: uppercase;
+color: $primaryaccent;
+margin-top: 1rem;
+font-size:1.221rem;
+}
+}
+
 .about-title-a, .about-title-c{
 text-transform: uppercase;
 color: $primaryaccent;
 margin-top: 2.441rem;
 font-size:1.221rem;
+@include gs-media(m, max) {  
+display: none;
+  }
 }
+
 
 img[rel="divider"] {
 padding-top: .75rem;
 }
 
 .headshot {
-  -webkit-border-radius: 120px;
-  -moz-border-radius: 120px;
-  border-radius: 120px;
-  margin-bottom: .25em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
 }
 
 .line_split {
@@ -343,6 +372,10 @@ float: none;
   }
   .line3 {
     color: #B3B3B3;
+  }
+ @include gs-media(m, max) {
+   @include gs-span(m, all);
+   float: none;
   }
 }
 
@@ -364,15 +397,30 @@ float: none;
   font-weight: normal;
 }
 
+img {
+  @include gs-media(t, max) { 
+   max-width: 150px;
+  }
+   @include gs-media(m, max) { 
+   max-width: 125px;
+  }
+}
+
 .img-a {
   float:left;
   margin: 1.25em 1.75em 0 1.25em;
+   @include gs-media(t, max) { 
+   margin: 1em 1em 0 0em;
+  }
 }
 
 .img-b {
 float:right;
 margin: 1.25em 0 0 1.75em;
 padding-bottom: 1rem;
+   @include gs-media(t, max) { 
+   margin: 1em 0em 0 1em;
+  }
 }
 
 footer {
@@ -380,8 +428,7 @@ footer {
   color: $primaryaccent;
   font-size: .75em;
   clear: both;
-  margin-top: 4.25em; 
-  margin-bottom: 4.25em;
+  margin: 4.25em 0; 
     a:link, a:visited {
       text-decoration: underline;
       color: $bodycolor;
@@ -390,6 +437,9 @@ footer {
       color: #ccc;
       text-decoration: underline;
     }
+  @include gs-media(t, max) {  
+  margin: 1em 0;
+  }
 }
 
 .footer-about {
@@ -407,4 +457,11 @@ font-style: italic;
 @include gs-span(d, 4, 5);
 }
 
+.footer-about, .footer-social {
+  @include gs-media(t, max) {  
+   @include gs-span(t, all);
+   padding-top: 1em;
+   text-align: center;
+  }
+}
 
