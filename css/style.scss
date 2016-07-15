@@ -2,6 +2,10 @@
 # Some front matter to make sure Jekyll compiles the file. Let's build this sass tank. 
 ---
 
+.wf-loading h1, .wf-loading p, .wf-loading body {
+  visibility:hidden;
+}
+
 // import normalize stylesheet
 @import "normalize";
 
