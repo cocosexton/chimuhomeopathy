@@ -288,34 +288,6 @@ line-height: 1.6;
   }
 }
 
-.blog {
-  p {
-    margin-top: 1rem;
-  }
-  h1 {
-    margin-top: 2.441rem;
-    font-size: 2.75em;
-    line-height: 1.2;
-    color: $primaryaccent;
-    text-align: center;
-    @include gs-media(m, max) {  
-    font-size: 2em;
-    margin-top: 1rem;
-    line-height: 1;
-  }
-  }
-}
-
-.blog > p {
-  font-size: 1.25em;
-  line-height: 1.4;
-  margin-top: 1rem;
-  color: $textcolor;
-  @include gs-media(m, max) {  
-     font-size: 1em;
-  }
-}
-
 .date {
   text-align: center;
   font-style: italic;
@@ -477,7 +449,8 @@ footer {
 }
 
 .footer-about {
-  @include gs-span(d, 1, 2);
+  @include gs-span(d, all);
+  text-align: center;
 }
 
 .footer-about > p, .footer-social > p {
