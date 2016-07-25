@@ -200,6 +200,9 @@ nav {
 
 //Couple of additional media queries to split the navigation into two lists at tablet/desktop sizes.
 @media only screen and (min-width: 768px) {
+nav ul li:nth-child(-n+2):after {
+   content: " /";
+}
 
 nav ul li:nth-child(-n+3) {
 float: left;
