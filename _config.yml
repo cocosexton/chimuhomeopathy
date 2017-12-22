@@ -1,7 +1,8 @@
 # Site settings
 title: Chimu Homeopathy
 email: david@chimuhomeopathy.com
-description: David S. Kim is a homeopath.
+description: David S. Kim is a homeopath currently based in Minneapolis, Minnesota, but who will soon be based in Okinawa, Japan and Seoul, South Korea. He practices primarily via online video calls.
+author: David S. Kim
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://chimuhomeopathy.com" # the base hostname & protocol for your site
 
@@ -9,3 +10,6 @@ url: "http://chimuhomeopathy.com" # the base hostname & protocol for your site
 markdown: kramdown
 permalink: /blog/:title
 paginate: 10
+
+plugins:
+  - jekyll-seo-tag
